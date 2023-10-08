@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #007BFF;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+		 img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the image */
+        }
+
+       .references {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            opacity: 0; /* Initially set opacity to 0 */
+            animation: fade-in 1s ease-out 0.5s forwards; /* Animation for fading in */
+        }
+
+        .reference-card {
+            flex-basis: calc(33.33% - 20px); /* Adjusted flex-basis for better alignment */
+            margin: 10px;
+            padding: 20px; /* Increased padding for better visual separation */
+            background-color: #f9f9f9; /* Light gray background color */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Enhanced box shadow */
+            transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+        }
+
+        .reference-card:hover {
+            transform: translateY(-5px); /* Move up on hover */
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+        }
+
+        /* Keyframes for the fade-in animation */
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h1>About Us</h1>
+        <p>
+            In recent years, the healthcare industry has witnessed a remarkable convergence of innovative medical research and cutting-edge technology, leading to exciting opportunities for early disease detection and management. One of the most promising breakthroughs in this era of rapid technological advancement is the integration of multiple disease detection capabilities through fundus image analysis. Fundus imaging, a technique that captures detailed images of the retina located at the back of the eye, has emerged as a powerful tool for diagnosing various ocular diseases.
+        </p>
+        <p>
+            Diseases such as hypertensive retinopathy, diabetic retinopathy, fibrosis, and maculopathy often develop silently and progress unnoticed in their early stages. To preserve patients' vision and prevent potentially severe complications, it is crucial to identify and manage these conditions promptly. Fundus imaging, with its non-invasive nature and advanced image analysis methods, offers a proactive approach to the identification and continuous monitoring of these ocular diseases.
+        </p>
+        <p>
+            One key innovation in this field is the utilization of transfer learning, a machine learning technique that leverages pre-trained models on large datasets to improve the accuracy of disease detection. Transfer learning allows healthcare professionals to fine-tune algorithms specifically for the task of detecting ocular diseases using fundus images. By building upon the knowledge acquired from analyzing vast amounts of medical imaging data, these algorithms become highly efficient at recognizing subtle signs of diseases, even in their early stages.
+        </p>
+        <p>
+            Furthermore, the application developed for this purpose goes beyond mere disease detection. It provides valuable information about disease prevention and symptoms to both healthcare providers and patients.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Literature Survey</h2>
+        <p>
+            Here's a summary of some of the key research papers in the field of deep learning-based disease detection using fundus images:
+        </p>
+        <ul>
+            <li>
+                <strong>A Survey on Deep-Learning-Based Diabetic Retinopathy Classification:</strong> This paper surveys the use of deep learning methods for diabetic retinopathy classification. The authors discuss the different datasets that have been used, the preprocessing techniques that have been applied, and the different deep learning models that have been proposed. The authors conclude that deep learning methods have shown promising results for diabetic retinopathy classification. Generalization ability of these models has to be improved.
+            </li>
+            <li>
+                <strong>Deep learning for diabetic retinopathy detection and classification based on fundus images:</strong> A review. This paper provides a comprehensive review of the use of deep learning for diabetic retinopathy detection and classification. The authors discuss the different deep learning models that have been proposed, the different datasets that have been used. The authors conclude that deep learning methods have shown promising results for diabetic retinopathy detection and classification. However, they also note that there is still room for improvement, especially in terms of the robustness of these models to noise and variations in lighting conditions.
+            </li>
+            <li>
+                <strong>Artificial Intelligence Detection of Diabetic Retinopathy:</strong> This paper presents a deep learning-based system for the detection of diabetic retinopathy. The system was trained on a dataset of over 100,000 fundus images. The system was evaluated by comparing its performance to that of human ophthalmologists. The system was found to be more accurate than general ophthalmologists and as accurate as retina specialists in detecting diabetic retinopathy.
+            </li>
+            <li>
+                <strong>Diabetic Retinopathy Detection Using Genetic Algorithm-Based CNN:</strong> This paper presents a deep learning-based system for the detection of diabetic retinopathy using a genetic algorithm-based CNN. The system was trained on a dataset of over 1,000 fundus images. The system was evaluated by comparing its performance to that of a support vector machine (SVM)-based classifier. The system was found to be more accurate than the SVM classifier in detecting diabetic retinopathy.
+            </li>
+            <!-- Add two more literature survey items here -->
+        </ul>
+    </div>
+ <div class="section">
+        <h2>References</h2>
+        <div class="references">
+            <div class="reference-card">
+                <p>1. Sebastian, A., Elharrouss, O., Al-Maadeed, S., & Almaadeed, N. (2023). A Survey on Deep-Learning-Based Diabetic Retinopathy Classification. Diagnostics, 13(3), 345.</p>
+            </div>
+            <div class="reference-card">
+                <p>2. Tsiknakis, N., Theodoropoulos, D., Manikis, G., Ktistakis, E., Boutsora, O., Berto, A., ... & Marias, K. (2021). Deep learning for diabetic retinopathy detection and classification based on fundus images: A review. Computers in biology and medicine, 135, 104599.</p>
+            </div>
+            <div class="reference-card">
+                <p>3. Lim, J. I., Regillo, C. D., Sadda, S. R., Ipp, E., Bhaskaranand, M., Ramachandra, C., ... & Gornbein, J. (2023). Artificial intelligence detection of diabetic retinopathy: subgroup comparison of the EyeArt system with ophthalmologists’ dilated examinations. Ophthalmology Science, 3(1), 100228.</p>
+            </div>
+            <div class="reference-card">
+                <p>4. Ullah, N., Mohmand, M. I., Ullah, K., Gismalla, M. S., Ali, L., Khan, S. U., & Ullah, N. (2022). Diabetic Retinopathy Detection Using Genetic Algorithm-Based CNN Features and Error Correction Output Code SVM Framework Classification Model. Wireless Communications and Mobile Computing, 2022.</p>
+            </div>
+            <div class="reference-card">
+                <p>5. Yadav, M., Goel, R., & Rajeswari, D. (2021, June). A Deep Learning Based Diabetic Retinopathy Detection from Retinal Images. In 2021 International Conference on Intelligent Technologies (CONIT) (pp. 1-5). IEEE.</p>
+            </div>
+            <div class="reference-card">
+                <p>6. Shamsan, A., Senan, E. M., & Shatnawi, H. S. A. (2023). Automatic Classification of Colour Fundus Images for Prediction Eye Disease Types Based on Hybrid Features. Diagnostics, 13(10), 1706.</p>
+            </div>
+            <div class="reference-card">
+                <p>7. Mateen, M., Wen, J., Nasrullah, Song, S., & Huang, Z. (2018). Fundus image classification using VGG-19 architecture with PCA and SVD. Symmetry, 11(1), 1.</p>
+            </div>
+            <div class="reference-card">
+                <p>8. Franklin, S. W., & Rajan, S. E. (2014). Diagnosis of diabetic retinopathy by employing image processing technique to detect exudates in retinal images. IET Image processing, 8(10), 601-609.</p>
+            </div>
+            <div class="reference-card">
+                <p>9. Kaushik, H., Singh, D., Kaur, M., Alshazly, H., Zaguia, A., & Hamam, H. (2021). Diabetic retinopathy diagnosis from fundus images using stacked generalization of deep models. IEEE Access, 9, 108276-108292.</p>
+            </div>
+            <div class="reference-card">
+                <p>10. Gharaibeh, N., Al-Hazaimeh, O. M., Al-Naami, B., & Nahar, K. M. (2018). An effective image processing method for detection of diabetic retinopathy diseases from retinal fundus images. International Journal of Signal and Imaging Systems Engineering, 11(4), 206-216.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more sections if needed -->
+
+</body>
+</html>
