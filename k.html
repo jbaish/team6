@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload Example</title>
+    <style>
+        /* Add CSS styles for the background image and centering the form */
+        body {
+            background-image: url('https://img.freepik.com/free-vector/gray-abstract-wireframe-background_53876-99911.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="demo.php" method="post" enctype="multipart/form-data">
+        <h1>Upload Your Image Here</h1>
+        <p>Select a File to Upload</p>
+        <input type="file" name="fuResume" id="fuResume">
+        <br>
+        <input type="submit" value="Upload File">
+    </form>
+</body>
+</html>
