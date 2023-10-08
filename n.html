@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Webcam Capture</title>
+    <title>Image Upload</title>
     <style>
         body {
-            background-image:url('https://img.freepik.com/free-vector/gray-abstract-wireframe-background_53876-99911.jpg'); /* Replace with your image URL */
-                 background-size: cover;
+            background-image: url('https://img.freepik.com/free-vector/gray-abstract-wireframe-background_53876-99911.jpg'); /* Replace with your image URL */
+            background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -13,11 +13,11 @@
             padding: 0;
         }
 
-        .video-wrap {
+        .image-upload {
             margin: 20px;
         }
 
-        #video {
+        #image-preview {
             max-width: 100%;
             height: auto;
             border: 1px solid #ccc;
@@ -28,7 +28,7 @@
             margin: 20px;
         }
 
-        #snap {
+        #upload {
             padding: 10px 20px;
             font-size: 18px;
             background-color: #3498db;
@@ -37,8 +37,12 @@
             cursor: pointer;
         }
 
-        #snap:hover {
+        #upload:hover {
             background-color: #2980b9;
+        }
+
+        input[type="file"] {
+            display: none;
         }
 
         span#errorMsg {
@@ -49,69 +53,55 @@
 <body>
     <p><span id="errorMsg"></span></p>
 
-    <!-- Stream video via webcam -->
-    <div class="video-wrap">
-        <video id="video" playsinline autoplay></video>
+    <!-- Upload image -->
+    <div class="image-upload">
+        <input type="file" id="file-input" accept="image/*">
+        <label for="file-input" id="upload-label">Upload Image</label>
+        <img id="image-preview" src="#" alt="Uploaded Image">
     </div>
 
-    <!-- Trigger canvas web API -->
+    <!-- Trigger image upload -->
     <div class="controller">
-        <button id="snap">Capture</button>
+        <button id="upload">Upload</button>
     </div>
-
-    <!-- Webcam video snapshot -->
-    <canvas id="canvas" width="640" height="480"></canvas>
 
     <script>
         'use strict';
 
-        const video = document.getElementById('video');
-        const canvas = document.getElementById('canvas');
-        const snap = document.getElementById('snap');
+        const fileInput = document.getElementById('file-input');
+        const imagePreview = document.getElementById('image-preview');
+        const upload = document.getElementById('upload');
         const errorMsgElement = document.querySelector('span#errorMsg');
 
-        const constraints = {
-            audio: true,
-            video: {
-                width: 1280,
-                height: 720
+        // Handle file input change
+        fileInput.addEventListener('change', function () {
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
             }
-        };
+        });
 
-        // Access webcam
-        async function init() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia(constraints);
-                handleSuccess(stream);
-            } catch (e) {
-                errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+        // Handle image upload
+        upload.addEventListener('click', function () {
+            const file = fileInput.files[0];
+
+            if (file) {
+                // You can perform further actions with the uploaded image here.
+                // For example, you can send it to a server or process it in JavaScript.
+
+                // Display a success message
+                errorMsgElement.innerHTML = 'Image uploaded successfully!';
+            } else {
+                // Display an error message if no file is selected
+                errorMsgElement.innerHTML = 'Please select an image to upload.';
             }
-        }
-
-        // Success
-        function handleSuccess(stream) {
-            window.stream = stream;
-            video.srcObject = stream;
-        }
-
-        // Load init
-        init();
-
-        // Draw image
-        var context = canvas.getContext('2d');
-        snap.addEventListener('click', function () {
-            context.drawImage(video, 0, 0, 640, 480);
-
-            // Convert the canvas image to a data URL
-            const imageDataUrl = canvas.toDataURL('image/png');
-
-            // Create a link element to download the image
-            const a = document.createElement('a');
-            a.href = imageDataUrl;
-            a.download = 'captured_image.png';
-
-            // Trigger a click event on the link to initiate the download
-            a.click();
         });
     </script>
 </body>
